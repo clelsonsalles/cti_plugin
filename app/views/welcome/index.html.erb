@@ -164,6 +164,7 @@
                                               <td class="align-middle">
                                                   <h7 class=""> 
                                                     <a href="#" class="">
+                                                      <%= link_to(tarefa.subject, project_path(tarefa), :class => tarefa.css_classes).html_safe %>
                                                       <%=link_to tarefa.subject %>
                                                     </a>
                                                   </h7>
