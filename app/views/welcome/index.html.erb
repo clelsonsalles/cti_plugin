@@ -23,7 +23,8 @@
             
           <div id="panelMonitoramento-id<%= @monitoramentoProjeto.id %>" class="accordion-collapse collapse show" aria-labelledby="panelMonitoramento-headid<%= @monitoramentoProjeto.id %>">
             <div class="accordion-body">
-              <h2> <a class="btn btn-outline-secondary" href="#" role="button">teste</a> </h2>
+              <p> Veja o manual de utilização do sistema, clique no botão abaixo e acesse:</p>
+               <a class="btn btn-outline-secondary" href="https://gestaocplan.mulheres.gov.br/attachments/1" role="button">Manual de Utilização CPLAN</a> 
              <p style="padding-left: 18px; color: #000; font-size: 18px;"> <%= @monitoramentoProjeto.description %></p>
               <% subprojectsMonitoramento = @monitoramentoProjeto.children.visible.to_a %>
               <% if subprojectsMonitoramento.any? %>
