@@ -162,14 +162,14 @@
                                             <% tarefasKR.each do |tarefa| %>
                                             <tr>
                                               <td class="align-middle">
-                                                 <%= link_to(tarefa.subject, tarefa_path(tarefa), :class => tarefa.css_classes).html_safe %>
+                                                
                                               </td>
                                               <td class="align-middle">
                                                 <span class="badge bg-success">
                                                 <%= tarefa.status.name %>
                                                 </span></td>
                                               <td class="align-middle"><div class="avatar-group">
-                                                <b><p> <%= tarefa.assigned_to.is_a?(User) ? tarefa.assigned_to.name : 'Não designado' %></p></b>
+                                                
                                                 </div></td>
                                               <td class="align-middle text-dark"><div
                                                   class="float-start me-3"><%= tarefa.done_ratio %>%</div>
