@@ -162,7 +162,7 @@
                                             <% tarefasKR.each do |tarefa| %>
                                             <tr>
                                               <td class="align-middle">
-                                                  <%= link_to(tarefas.name, project_path(tarefas), :class => tarefas.css_classes + " nav-link active").html_safe %>
+                                                  <%= link_to(tarefa.name, project_path(tarefa), :class => tarefa.css_classes + " nav-link active").html_safe %>
                                               </td>
                                               <td class="align-middle">
                                                 <span class="badge bg-success">
