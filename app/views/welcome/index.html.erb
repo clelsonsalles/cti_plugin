@@ -1,14 +1,9 @@
-
-
 <div class="splitcontent">
 <div class="splitcontentleft">
   <div class="wiki">
     <%= textilizable Setting.welcome_text %>
   </div>
   <%= call_hook(:view_welcome_index_left) %>
-
-
-
 <div class="row mt-6">
     <div class="row">
       
@@ -29,7 +24,6 @@
               <% subprojectsMonitoramento = @monitoramentoProjeto.children.visible.to_a %>
               <% if subprojectsMonitoramento.any? %>
                 <% subprojectsMonitoramento.each do |objetivo| %>
-
             <div class="accordion" id="accordionPanelObjetivos-id<%= objetivo.id %>">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="panelObjetivos-headid<%= objetivo.id %>">
@@ -58,7 +52,6 @@
                           </h2>
                           <div id="panelsStayOpen-panelResultado-id<%= resultadoChave.id %>" class="accordion-collapse collapse <%= resultadoChave.id == @krProjeto.id ? 'show': '' %>" aria-labelledby="panelResultado-headid<%= resultadoChave.id %>">
                             <div class="accordion-body">
-
                                <div class="row  mt-6">
                                   <div  class="col-xl-4 col-lg-12 col-md-12 col-12 mb-6 mb-xl-0">
                                     <div class="card card-detalhes">
@@ -136,12 +129,8 @@
                                       </div>
                                     </div>
                                  </div>
-
-
                                 </div>
                                  <p></p>
-
-
                                   <div class="row mt-6">
                                   <div class="col-md-12 col-12">
                                     <div class="card">
@@ -159,18 +148,15 @@
                                           <tbody>
                                           <% tarefasKR = resultadoChave.issues %>
                                           <% if tarefasKR.any? %>
-                                               <% tarefasKR.each do |tarefa| %>
+                                            <% tarefasKR.each do |tarefa| %>
                                             <tr>
                                               <td class="align-middle">
-                                                  <%= tarefa.description.name %>
+                                                 <%= link_to(tarefa.subject, project_path(tarefa), :class => tarefa.css_classes).html_safe %>
                                               </td>
                                               <td class="align-middle">
                                                 <span class="badge bg-success">
-                                              <%= tarefa.assigned_to.name %>
+                                                <%= tarefa.status.name %>
                                                 </span></td>
-
-
-                                           
                                               <td class="align-middle"><div class="avatar-group">
                                                 <b><p> <%= tarefa.assigned_to.is_a?(User) ? tarefa.assigned_to.name : 'Não designado' %></p></b>
                                                 </div></td>
@@ -219,7 +205,6 @@
   <p></p>
   </div>
 </div>
-
   <% if @news.any? %>
     <div class="splitcontentright">
       <div class="news box">
@@ -230,8 +215,6 @@
       <%= call_hook(:view_welcome_index_right) %>
     </div>
   <% end %>
-
-
 <% content_for :header_tags do %>
 <%= auto_discovery_link_tag(:atom, {:controller => 'news', :action => 'index', :key => User.current.atom_key, :format => 'atom'},
                                    :title => "#{Setting.app_title}: #{l(:label_news_latest)}") %>
