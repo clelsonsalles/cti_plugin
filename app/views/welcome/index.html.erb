@@ -161,9 +161,7 @@
                                           <% if tarefasKR.any? %>
                                             <% tarefasKR.each do |tarefa| %>
                                             <tr>
-                                              <td class="align-middle">
-                                                  <%=link_to tarefa.subject %>
-                                              </td>
+                                             
                                               <td class="align-middle">
                                                 <span class="badge bg-success">
                                                 <%= tarefa.assigned_to.name %>
