@@ -155,7 +155,7 @@
                                         <table class="table  mb-0">
                                           <thead class="table-light">
                                             <tr>
-                                              <th>Tarefas</th> <th>Situação</th> <th>Responsável</th> <th>Progresso</th>
+                                              <th>Tarefas</th> <th>Situação</th> <th>Alterado em </th> <th>Responsável</th> <th>Progresso</th>
                                             </tr>
                                           </thead>
                                           <tbody>
@@ -163,9 +163,7 @@
                                           <% if tarefasKR.any? %>
                                             <% tarefasKR.each do |tarefa| %>
                                             <tr>
-                                              <td class="align-middle">Alterado em 
-                                                 
-                                              </td>
+                                              
                                               <td class="align-middle">
                                                  <%= link_to(tarefa.subject, project_path(tarefa), :class => tarefa.css_classes).html_safe %>
                                               </td>
