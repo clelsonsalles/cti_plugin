@@ -27,6 +27,8 @@ class WelcomeController < ApplicationController
   def index
     @news = News.latest User.current
     # @monitoramentoProjeto = nil
+
+    @projetos =  Project.where(:parent_id: nil)
    
    @monitoramentoProjeto = Project.find(23)
    @objetivoProjeto =  (@monitoramentoProjeto.present? ? (@monitoramentoProjeto.children.present? ? @monitoramentoProjeto.children.first : nil) : nil)
