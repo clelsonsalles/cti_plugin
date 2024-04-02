@@ -28,7 +28,7 @@ class WelcomeController < ApplicationController
     @news = News.latest User.current
     # @monitoramentoProjeto = nil
 
-    @projetos =  Project.where(parent_id: nil).reorder(:name => :desc)
+    @projetos =  Project.where(parent_id: nil).reorder(:name => :asc)
    
    
   end
