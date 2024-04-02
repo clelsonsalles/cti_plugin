@@ -30,9 +30,7 @@ class WelcomeController < ApplicationController
 
     @projetos =  Project.where(parent_id: nil)
    
-   @monitoramentoProjeto = Project.find(23)
-   @objetivoProjeto =  (@monitoramentoProjeto.present? ? (@monitoramentoProjeto.children.present? ? @monitoramentoProjeto.children.first : nil) : nil)
-   @krProjeto = (@objetivoProjeto.present? ? (@objetivoProjeto.children.present? ? @objetivoProjeto.children.first : nil) : nil)
+   
   end
 
   def robots
