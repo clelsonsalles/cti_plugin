@@ -10,19 +10,20 @@
       <div class="accordion" id="accordionPanelMonitoramento">
 
 
+      <% @projetos.each do |projetoMonitoramento| %>
       <div class="accordion-item">
-          <h3 class="accordion-header" id="panelMonitoramento-headid<%= @monitoramentoProjeto.id %>">
-            <button class="accordion-button buttonMonitoramento" type="button" data-bs-toggle="collapse" data-bs-target="#panelMonitoramento-id<%= @monitoramentoProjeto.id %>" aria-expanded="true" aria-controls="panelMonitoramento-id<%= @monitoramentoProjeto.id %>">
-             <h3 style="color:#ffffff;"> <%= link_to(@monitoramentoProjeto.name, project_path(@monitoramentoProjeto), :class => @monitoramentoProjeto.css_classes + " nav-link active").html_safe %></h3>
+          <h3 class="accordion-header" id="panelMonitoramento-headid<%= projetoMonitoramento.id %>">
+            <button class="accordion-button buttonMonitoramento" type="button" data-bs-toggle="collapse" data-bs-target="#panelMonitoramento-id<%= projetoMonitoramento.id %>" aria-expanded="true" aria-controls="panelMonitoramento-id<%= projetoMonitoramento.id %>">
+             <h3 style="color:#ffffff;"> <%= link_to(projetoMonitoramento.name, project_path(projetoMonitoramento), :class => projetoMonitoramento.css_classes + " nav-link active").html_safe %></h3>
             </button>
           </h3>
             
-          <div id="panelMonitoramento-id<%= @monitoramentoProjeto.id %>" class="accordion-collapse collapse show" aria-labelledby="panelMonitoramento-headid<%= @monitoramentoProjeto.id %>">
+          <div id="panelMonitoramento-id<%= projetoMonitoramento.id %>" class="accordion-collapse collapse show" aria-labelledby="panelMonitoramento-headid<%= projetoMonitoramento.id %>">
             <div class="accordion-body">
               <p> Veja o manual de utilização do sistema, clique no botão abaixo e acesse:</p>
                <a class="btn btn-outline-secondary" href="https://gestaocplan.mulheres.gov.br/attachments/1" role="button"><b>Manual de Utilização CPLAN</b></a> 
-             <p style="padding-left: 18px; color: #000; font-size: 18px;"> <%= @monitoramentoProjeto.description %></p>
-              <% subprojectsMonitoramento = @monitoramentoProjeto.children.visible.to_a %>
+             <p style="padding-left: 18px; color: #000; font-size: 18px;"> <%= projetoMonitoramento.description %></p>
+              <% subprojectsMonitoramento = projetoMonitoramento.children.visible.to_a %>
               <% if subprojectsMonitoramento.any? %>
                 <% subprojectsMonitoramento.each do |objetivo| %>
             <div class="accordion" id="accordionPanelObjetivos-id<%= objetivo.id %>">
@@ -211,6 +212,11 @@
              </div>
             </div>
          </div>
+         <% end %>
+
+
+
+
        </div>
     </div>
   <p></p>
