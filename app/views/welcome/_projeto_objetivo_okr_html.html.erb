@@ -1,0 +1,8 @@
+  
+  <% projeto.visible_custom_field_values.each do |value| %>
+    <% if value.value.include? 'Objetivo' %>
+       <p>  <%= value.custom_field_id %> - <%= value.custom_field.name %> :
+         <%= value.value %>  <br />
+      </p>
+    <% end %>
+  <% end %>
