@@ -36,6 +36,18 @@
                   </h2>
                   <div id="panelObjetivos-id<%= objetivo.id %>" class="accordion-collapse collapse show" aria-labelledby="panelObjetivos-headid<%= objetivo.id %>">
                     <div class="accordion-body">
+
+
+
+
+
+                    <%= render :partial => 'projeto_objetivo_okr_html', :locals => {:projeto => objetivo} %>
+
+
+
+
+
+
                      <b>
                      <%= link_to(objetivo.name, project_path(objetivo), :class => objetivo.css_classes + " nav-link active ").html_safe %>                     
                      </b>
