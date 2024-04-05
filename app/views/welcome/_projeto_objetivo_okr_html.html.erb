@@ -23,7 +23,7 @@
 
 						  <% resultadoChave.visible_custom_field_values.each do |value| %>
 							<% if value.value.include? 'Objetivo' %>
-							  <%= render :partial => 'projeto_objetivo_okr_html', :locals => {:projeto => resultadoChave} %>
+							  <%= render :partial => 'projeto_objetivo_okr_html', :locals => {:objetivo => resultadoChave} %>
 							<% end %>
 							<% if value.value.include? 'Resultado' %>
 							  <%= render :partial => 'projeto_resultado_okr_html', :locals => {:resultadoChave => resultadoChave} %>
